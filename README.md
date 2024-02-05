@@ -63,4 +63,22 @@ Similar to the previous line, this part extracts the first part of the parsed st
 	</code>
 </pre>
    ![preview](images/pad.png) | ![preview](images/pad2.png)
+   
+## Breaking out OwnerAddress in to individual columns (Address, City, State)
+New columns, SplitAddress and SplitCity, were added to the table, and existing PropertyAddress values were split into these columns using the PARSENAME and REPLACE functions.
+<pre>
+	<code>
+		Alter Table SqlCleaning.dbo.NashvilleHousing  -- Add New Columns 
+		ADD 
+			OwnerSplitAddress NVARCHAR(255),
+			OwnerSplitCity NVARCHAR(255),
+			OwnerSplitState NVARCHAR(255);
+
+			UPDATE SqlCleaning.dbo.NashvilleHousing
+			SET OwnerSplitAddress = PARSENAME(REPLACE(OwnerAddress,',','.'),3),
+				OwnerSplitCity = PARSENAME(REPLACE(OwnerAddress,',','.'),2),
+				OwnerSplitState = PARSENAME(REPLACE(OwnerAddress,',','.'),1)
+	</code>
+</pre>
+	
 
