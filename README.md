@@ -55,4 +55,5 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
 			 SplitCity = PARSENAME(REPLACE(PropertyAddress,',','.'),1)
 	</code>
 </pre>
+   ![preview](images/pad.png) | ![preview](images/pad2.png)
 
