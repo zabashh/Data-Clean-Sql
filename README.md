@@ -82,3 +82,29 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
 </pre>
  ![preview](images/oad.png) | ![preview](images/oad1.png)	
 
+ ## Change Y and N to Yes and No in SoldAsVacant Field
+ The SoldAsVacant column values, represented as 'Y' and 'N', were updated to 'Yes' and 'No' respectively for clarity and consistency.
+
+ <pre>
+	 <code>
+		 	UPDATE SqlCleaning.dbo.NashvilleHousing
+	SET SoldAsVacant = 'Yes'
+	Where SoldAsVacant = 'Y';
+
+	-- For N 
+	UPDATE SqlCleaning.dbo.NashvilleHousing
+	SET SoldAsVacant = 'No'
+	Where SoldAsVacant = 'N'
+
+	-- Or we can use Case Statement
+
+	UPDATE SqlCleaning.dbo.NashvilleHousing
+				SET SoldAsVacant = CASE 
+                      WHEN SoldAsVacant = 'Y' THEN 'Yes'
+                      WHEN SoldAsVacant = 'N' THEN 'No'
+                      ELSE SoldAsVacant
+                  END;
+	 </code>
+ </pre>
+
+
