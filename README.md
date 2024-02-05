@@ -66,7 +66,6 @@ Similar to the previous line, this part extracts the first part of the parsed st
    
 ## Breaking out OwnerAddress in to individual columns (Address, City, State)
 New columns, SplitAddress and SplitCity, were added to the table, and existing PropertyAddress values were split into these columns using the PARSENAME and REPLACE functions.
-![preview](images/oad.png) | ![preview](images/oad1.png)
 <pre>
 	<code>
 		Alter Table SqlCleaning.dbo.NashvilleHousing  -- Add New Columns 
@@ -81,6 +80,7 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
 				OwnerSplitState = PARSENAME(REPLACE(OwnerAddress,',','.'),1)
 	</code>
 </pre>
+![preview](images/oad.png) | ![preview](images/oad1.png)
 
 ## Change Y and N to Yes and No in SoldAsVacant Field
  The SoldAsVacant column values, represented as 'Y' and 'N', were updated to 'Yes' and 'No' respectively for clarity and consistency.
