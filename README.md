@@ -82,12 +82,8 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
 </pre>
  ![preview](images/oad.png) | ![preview](images/oad1.png)
 
- 
 
- ## Change Y and N to Yes and No in SoldAsVacant Field:
- ## Standardize Date Format:
- ## Change Y and N to Yes and No in SoldAsVacant Field:
-
+ # Change Y and N to Yes and No in SoldAsVacant Field:
  The SoldAsVacant column values, represented as 'Y' and 'N', were updated to 'Yes' and 'No' respectively for clarity and consistency.
 
  <pre>
@@ -111,5 +107,3 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
                   END;
 	 </code>
  </pre>
-
-
