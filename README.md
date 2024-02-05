@@ -80,5 +80,5 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
 				OwnerSplitState = PARSENAME(REPLACE(OwnerAddress,',','.'),1)
 	</code>
 </pre>
-	
+ ![preview](images/oad.png) | ![preview](images/oad1.png)	
 
