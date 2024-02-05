@@ -40,7 +40,14 @@ JOIN SqlCleaning.dbo.NashvilleHousing b
 </pre>
 
 ## Breaking out PropertyAddress into individual columns (Address, City)
-New columns, SplitAddress and SplitCity, were added to the table, and existing PropertyAddress values were split into these columns using the PARSENAME and REPLACE functions.
+New columns, SplitAddress and SplitCity, were added to the table, and existing PropertyAddress values were split into these columns using the PARSENAME and REPLACE functions.SET SplitAdress = PARSENAME(REPLACE(PropertyAddress, ',', '.'), 2):
+
+The PARSENAME function is used to extract specific parts of a delimited string. In this case, PropertyAddress is assumed to be a comma-delimited string.
+The REPLACE(PropertyAddress, ',', '.') part replaces commas with dots, preparing the string for parsing.
+PARSENAME(..., 2) extracts the second part of the parsed string, which is assumed to be the street address, and assigns it to the new column SplitAdress.
+SplitCity = PARSENAME(REPLACE(PropertyAddress, ',', '.'), 1):
+
+Similar to the previous line, this part extracts the first part of the parsed string, assumed to be the city, and assigns it to the new column SplitCity.
 
 <pre>
 	<code>
