@@ -109,3 +109,6 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
                   END;
 	 </code>
  </pre>
+ 
+ ## Handling Duplicate Values:
+
