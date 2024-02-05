@@ -87,7 +87,7 @@ New columns, SplitAddress and SplitCity, were added to the table, and existing P
 
  <pre>
 	 <code>
-		 	UPDATE SqlCleaning.dbo.NashvilleHousing
+	UPDATE SqlCleaning.dbo.NashvilleHousing
 	SET SoldAsVacant = 'Yes'
 	Where SoldAsVacant = 'Y';
 
