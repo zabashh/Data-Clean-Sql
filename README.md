@@ -1,4 +1,3 @@
-# Standardize Date Format:
 In this section, the SaleDate column is converted to a standardized date format.
 
 <pre>
