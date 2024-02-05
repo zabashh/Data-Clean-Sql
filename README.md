@@ -38,3 +38,21 @@ JOIN SqlCleaning.dbo.NashvilleHousing b
 
   </code>
 </pre>
+
+## Breaking out PropertyAddress into individual columns (Address, City)
+New columns, SplitAddress and SplitCity, were added to the table, and existing PropertyAddress values were split into these columns using the PARSENAME and REPLACE functions.
+
+<pre>
+	<code>
+		Alter Table SqlCleaning.dbo.NashvilleHousing -- Add New Columns 
+		ADD 
+		SplitAdress	NVARCHAR(255),
+		SplitCity NVARCHAR(100);
+
+
+		UPDATE SqlCleaning.dbo.NashvilleHousing
+		 SET SplitAdress = PARSENAME(REPLACE(PropertyAddress,',','.'),2),
+			 SplitCity = PARSENAME(REPLACE(PropertyAddress,',','.'),1)
+	</code>
+</pre>
+
