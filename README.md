@@ -11,7 +11,7 @@ In this section, the SaleDate column is converted to a standardized date format.
     Update SqlCleaning.dbo.NashvilleHousing
     SET SaleDateConverted = CONVERT(Date,SaleDate)
 
-   | ![preview](images/d1.png) | ![preview](images/sd2.png) 
+   | ![preview](images/d1.png) | ![preview](images/sd2.png) |
     
 
     
